@@ -12,10 +12,8 @@ from employees as e
 WHERE DATE_PART('year',hire_date) = 1986;
 
 --List the manager of each department along with their department number, department name, employee number, last name, and first name.
-select *
-from departments
 select m.dept_no,d.dept_name,m.emp_no,e.last_name,e.first_name
-from dept_managers as m
+from dept_manager as m
 left join departments as d on
 d.dept_no=m.dept_no
 left join employees as e on
